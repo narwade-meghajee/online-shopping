@@ -1,4 +1,4 @@
-package net.kzn.shoppingbackend;
+package net.nml.shoppingbackend;
 
 import junit.framework.Test;
 import junit.framework.TestCase;

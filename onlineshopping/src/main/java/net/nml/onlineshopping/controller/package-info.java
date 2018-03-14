@@ -5,4 +5,4 @@
  * @author Meghaji
  *
  */
-package net.kzn.onlineshopping.controller;
+package net.nml.onlineshopping.controller;

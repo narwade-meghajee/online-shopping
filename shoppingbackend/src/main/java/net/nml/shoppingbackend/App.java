@@ -1,4 +1,4 @@
-package net.kzn.shoppingbackend;
+package net.nml.shoppingbackend;
 
 /**
  * Hello world!
