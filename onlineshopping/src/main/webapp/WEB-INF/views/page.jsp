@@ -1,6 +1,6 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+ <%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
 <%@taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <spring:url var="css" value="/resources/css/"/>
 <spring:url var="js" value="/resources/js/"/>
@@ -19,8 +19,15 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Shop Homepage - Start Bootstrap Template</title>
+    <title>Online Shopping - ${title}</title>
 
+    <script>
+	window.menu = '${title}';
+	
+	window.contextRoot = '${contextRoot}'
+	
+    </script>
+    
     <!-- Bootstrap Core CSS -->
     <link href="${css}/bootstrap.min.css" rel="stylesheet">
 
@@ -40,10 +47,20 @@
 
     <!-- Navigation -->
     <%@include file="./shared/navbar.jsp" %>
-    <!-- Page Content -->
-    <%@include file="home.jsp" %>
-    <!-- Loading here footer -->
-    <%@include file="./shared/footer.jsp" %>
+    <!-- Loading the home content -->
+			<c:if test="${userClickHome == true }">
+				<%@include file="home.jsp"%>
+			</c:if>
+
+			<!-- Load only when user clicks about -->
+			<c:if test="${userClickAbout == true }">
+				<%@include file="about.jsp"%>
+			</c:if>
+
+			<!-- Load only when user clicks contact -->
+			<c:if test="${userClickContact == true }">
+				<%@include file="contact.jsp"%>
+			</c:if>
     
     <!-- jQuery -->
     <script src="${js}/jquery.js"></script>
