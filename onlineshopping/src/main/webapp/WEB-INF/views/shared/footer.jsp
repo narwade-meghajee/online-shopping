@@ -1,15 +1,16 @@
-    <div class="container">
 
-        <hr>
+<div class="container footer">
 
-        <!-- Footer -->
-        <footer>
-            <div class="row">
-                <div class="col-lg-12">
-                    <p>Copyright &copy; Your Website 2014</p>
-                </div>
-            </div>
-        </footer>
+	<hr>
 
-    </div>
-    <!-- /.container -->
+	<!-- Footer -->
+	<footer>
+		<div class="row">
+			<div class="col-lg-12">
+				<p>Copyright &copy; Your Website 2014</p>
+			</div>
+		</div>
+	</footer>
+
+</div>
+<!-- /.container -->
