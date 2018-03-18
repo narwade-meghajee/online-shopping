@@ -15,12 +15,14 @@
 
 
 	<dependencies>
+	
 	<!-- Link backend project to frantend project -->
 		<dependency>
 			<groupId>net.nml</groupId>
 			<artifactId>shoppingbackend</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
+		
 		<!-- Java EE API -->
 		<dependency>
 			<groupId>javax</groupId>

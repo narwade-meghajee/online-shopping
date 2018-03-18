@@ -7,4 +7,5 @@ import net.nml.shoppingbackend.dto.Category;
 public interface CaterogyDAO {
 
 	List<Category> list();
+	Category get(int id);
 }

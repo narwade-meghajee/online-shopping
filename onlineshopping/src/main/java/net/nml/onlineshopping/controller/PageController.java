@@ -2,10 +2,13 @@ package net.nml.onlineshopping.controller;
  
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 import net.nml.shoppingbackend.dao.CaterogyDAO;
+import net.nml.shoppingbackend.daoImpl.CategoryDAOImpl;
+import net.nml.shoppingbackend.dto.Category;
 
 @Controller
 public class PageController {
@@ -17,7 +20,7 @@ public class PageController {
 		ModelAndView mv = new ModelAndView("page");		
 		mv.addObject("title","Home");
 		//passing the list of category
-		mv.addObject("categories", caterogyDAO.list());
+		mv.addObject("categories",caterogyDAO.list());
 		
 		mv.addObject("userClickHome",true);
 		return mv;				
@@ -38,5 +41,36 @@ public class PageController {
 		mv.addObject("userClickContact",true);
 		return mv;				
 	}	
+	//Method to load all the products and based on category
+	@RequestMapping(value = {"/show/all/products"})
+	public ModelAndView showAllProducts() {		
+		ModelAndView mv = new ModelAndView("page");		
+		mv.addObject("title","All Products");
+		//passing the list of category
+		mv.addObject("categories",caterogyDAO.list());
+		
+		mv.addObject("userClicAllProducts",true);
+		return mv;				
+	}
 	
+	
+	@RequestMapping(value = {"/show/category/{id}/products"})
+	public ModelAndView showCategoryProducts(@PathVariable("id") int id) {		
+		ModelAndView mv = new ModelAndView("page");		
+		
+		//categoryDAO to fetch a single category
+		Category category=null;
+		category=caterogyDAO.get(id);
+		
+		mv.addObject("title",category.getName());
+		//passing the list of category
+		mv.addObject("categories",caterogyDAO.list());
+		
+		//passing the single category
+		mv.addObject("category", category);
+		
+		mv.addObject("userClickCategoryProducts",true);
+		
+		return mv;				
+	}
 }
