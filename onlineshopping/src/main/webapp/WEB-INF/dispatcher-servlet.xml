@@ -14,7 +14,7 @@
    
    
 	<context:component-scan base-package="net.nml.onlineshopping/controller" />
-	<context:component-scan base-package="net.nml.shoppingbackend/daoImpl" />
+	<context:component-scan base-package="net.nml.shoppingbackend" />
 	
 	<bean id="viewResolver"
 		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
