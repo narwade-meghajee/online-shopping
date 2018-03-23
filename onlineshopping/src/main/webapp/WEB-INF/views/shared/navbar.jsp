@@ -1,4 +1,11 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+	pageEncoding="ISO-8859-1"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 
+<spring:url var="css" value="/resources/css" />
+<spring:url var="js" value="/resources/js" />
+<spring:url var="images" value="/resources/images" />
 <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
 	<div class="container">
 	
@@ -17,7 +24,7 @@
 		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 			<ul class="nav navbar-nav">
 				<li id="about"><a href="${contextRoot}/about">About</a></li>
-				<li id="ListProducts"><a href="${contextRoot}/show/all/products">View Products</a></li>
+				<li id="listProducts"><a href="${contextRoot}/show/all/products">View Products</a></li>
 				<li id="contact"><a href="${contextRoot}/contact">Contact</a></li>
 			</ul>
 		</div>
